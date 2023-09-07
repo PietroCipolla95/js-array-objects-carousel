@@ -16,7 +16,9 @@ const slides = [
     },
 ]
 
-let sliderImages = document.querySelector('.images')
+let sliderImages = document.querySelector('.images');
+
+let activeSlide = 0;
 
 
 slides.forEach(myFnc);
@@ -27,5 +29,8 @@ function myFnc(slide) {
     sliderImages.insertAdjacentHTML('beforeend', slideDom)   
     
 }
+
+
+
 
 

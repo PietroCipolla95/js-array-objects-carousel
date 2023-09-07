@@ -1,3 +1,11 @@
 .my_w {
     width: 60%;
 }
+
+.active {
+    display: block;
+}
+
+img:not(.active) {
+    display: none;
+} 
