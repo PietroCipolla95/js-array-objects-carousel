@@ -32,8 +32,10 @@ const sliderImagesEl = document.querySelector('.slider .images')
 const prevEl = document.querySelector('.prev')
 const nextEl = document.querySelector('.next')
 
+//loop inside array
 slides.forEach(eachSl);
 
+//to create img in dom
 function eachSl(slide, i) { 
 
     console.log(slide.pic);
@@ -43,12 +45,37 @@ function eachSl(slide, i) {
 }
 
 const slidesImages = document.querySelectorAll('.slider .images > img')
-console.log(slidesImages);
 
+//event listener to manually change slides
 nextEl.addEventListener('click', goNextSl)
-prevEl.addEventListener('click', goPrevEl)
+prevEl.addEventListener('click', goPrevSl)
 
 
+//dom elements to control automatic loops
+let prevTimeSl = document.getElementById('prev_timer');
+let nextTimeSl = document.getElementById('next_timer');
+
+
+//event listeners for automate loops
+prevTimeSl.addEventListener('click', autoPrevSl);
+nextTimeSl.addEventListener('click', autoNextSl);
+
+
+//automate function to loop previous slides
+function autoPrevSl() {
+
+    setInterval(goPrevSl, 2000)
+
+}
+
+//automate function to loop next slides
+function autoNextSl() {
+
+    setInterval(goNextSl, 2000)
+    
+}
+
+//function to next slide
 function goNextSl() {
 
     console.log('cliccato su next');
@@ -77,7 +104,8 @@ function goNextSl() {
     
 }
 
-function goPrevEl() {
+//function to previous slide
+function goPrevSl() {
 
    console.log('cliccato su prev');
   
@@ -94,9 +122,7 @@ function goPrevEl() {
         // decrement the activeSlide of 1
         activeSlide--
     }
-    
-    console.log(activeSlide);
-  
+      
     // select the next slide
     const nextSlide = slidesImages[activeSlide]
     console.log(nextSlide);
