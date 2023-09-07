@@ -35,11 +35,10 @@ const nextEl = document.querySelector('.next')
 
 slides.forEach(eachSl);
 
-function eachSl(slide) { 
+function eachSl(slide, i) { 
 
-    let slidePath = slide.pic
-    console.log(slidePath);
-    const slideMarkup = `<img class="" src="${slidePath}" alt="">`
+    console.log(slide.pic);
+    const slideMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${slide.pic}" alt="">`
     sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup);
 
 }
