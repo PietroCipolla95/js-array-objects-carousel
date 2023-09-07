@@ -7,13 +7,35 @@
 //
 //
 
+
+
 const slides = [
+    {
+       pic : '.assets/img/01.webp',
+    },
+    {
+        pic : '.assets/img/02.webp',
+    },
+    {
+        pic : '.assets/img/03.webp',
+    },
+    {
+        pic : '.assets/img/04.webp',
+    },
+    {
+        pic : '.assets/img/05.webp',
+    },
+]
+
+
+
+/* const slides = [
     './assets/img/01.webp', 
     './assets/img/02.webp', 
     './assets/img/03.webp', 
     './assets/img/04.webp',
     './assets/img/05.webp',
-]
+] */
 
 let activeSlide = 0;
 
@@ -21,19 +43,16 @@ const sliderImagesEl = document.querySelector('.slider .images')
 const prevEl = document.querySelector('.prev')
 const nextEl = document.querySelector('.next')
 
+slides.forEach(eachSl);
 
-for (let i = 0; i < slides.length; i++) {
-    const slidePath = slides[i];
+function eachSl(slide) { 
+
+    let slidePath = slide.pic
     console.log(slidePath);
+    const slideMarkup = `<img class="" src="${slidePath}" alt="">`
+    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup);
     
-    // for each slide we create the markup
-    const slideMarkup = `<img class="${activeSlide === i ? 'active' : '' }" src="${slidePath}" alt="">`
-    //console.log(slideMarkup);
-  
-    sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup)
-  
 }
-
 
 const slidesImages = document.querySelectorAll('.slider .images > img')
 console.log(slidesImages);
