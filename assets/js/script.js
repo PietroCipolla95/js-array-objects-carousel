@@ -11,19 +11,19 @@
 
 const slides = [
     {
-       pic : '.assets/img/01.webp',
+       pic : './assets/img/01.webp',
     },
     {
-        pic : '.assets/img/02.webp',
+        pic : './assets/img/02.webp',
     },
     {
-        pic : '.assets/img/03.webp',
+        pic : './assets/img/03.webp',
     },
     {
-        pic : '.assets/img/04.webp',
+        pic : './assets/img/04.webp',
     },
     {
-        pic : '.assets/img/05.webp',
+        pic : './assets/img/05.webp',
     },
 ]
 
@@ -51,7 +51,7 @@ function eachSl(slide) {
     console.log(slidePath);
     const slideMarkup = `<img class="" src="${slidePath}" alt="">`
     sliderImagesEl.insertAdjacentHTML('beforeend', slideMarkup);
-    
+
 }
 
 const slidesImages = document.querySelectorAll('.slider .images > img')
@@ -60,14 +60,14 @@ console.log(slidesImages);
 
 const thumbsElement = document.querySelector('.thumbnails')
 
-for (let i = 0; i < slides.length; i++) {
-  const thumbPath = slides[i];
+/* for (let i = 0; i < slides.length; i++) {
+  const thumbPath = slide.pic;
   const thumbMarkup = `<img class="thumb ${activeSlide === i ? 'active' : ''}" src="${thumbPath}" alt="">`
   //console.log(thumbMarkup);
 
   thumbsElement.insertAdjacentHTML('beforeend', thumbMarkup)
   
-}
+} */
 
 // intercept click on the next icon 
 nextEl.addEventListener('click', function(){
@@ -79,11 +79,11 @@ nextEl.addEventListener('click', function(){
     // remove the active class from the current slide
     currentSlide.classList.remove('active')
   
-    // select the active thumb
+    /* // select the active thumb
     const currentThumb = document.querySelector('.thumbnails > img.active')
     console.log(currentThumb);
     // remove the active class from the active thumb
-    currentThumb.classList.remove('active')
+    currentThumb.classList.remove('active') */
   
     
     // activeSlide = 4
@@ -107,11 +107,11 @@ nextEl.addEventListener('click', function(){
     
   
   
-    // select the next thumb
+    /* // select the next thumb
     const nextThumb = document.querySelectorAll('.thumb')[activeSlide]
     console.log(nextThumb);
     // add to the next thumb the active class
-    nextThumb.classList.add('active')
+    nextThumb.classList.add('active') */
   
   
 })
