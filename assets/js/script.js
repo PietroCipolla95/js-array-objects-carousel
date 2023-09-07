@@ -16,19 +16,35 @@ const slides = [
     },
 ]
 
-let sliderImages = document.querySelector('.images');
+let sliderImages = document.querySelector('.images'); //contenitore slides
 
-let activeSlide = 0;
+const slideImg = document.querySelectorAll('.images > img') //immagini generate
 
+slides.forEach(createSl);
 
-slides.forEach(myFnc);
+function createSl(slide) {
 
-function myFnc(slide) {
-
-    let slideDom = `<img src="${slide.pic}" class="my_w">` 
+    let slideDom = `<img src="${slide.pic}" class="active">` 
     sliderImages.insertAdjacentHTML('beforeend', slideDom)   
     
 }
+
+
+// controls variables
+const nextSl = document.getElementById('next')
+const prevSl = document.getElementById('prev')
+
+
+nextSl.addEventListener('click', function() {
+
+    const currentSlide = slideImg
+
+    currentSlide.classList.remove('active')
+
+    
+})
+
+
 
 
 
